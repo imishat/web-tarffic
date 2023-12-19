@@ -14,7 +14,6 @@ const headerCreateController = async (req: Request, res: Response) => {
   }
 };
 const getAllHeaderController = async (req: Request, res: Response) => {
-  console.log(req.query);
   const options = req.query;
   try {
     const result = await headerService.getAllHeader(options);
