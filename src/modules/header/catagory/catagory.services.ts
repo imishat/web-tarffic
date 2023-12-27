@@ -13,6 +13,7 @@ const GetSingleCatagory = async (id: number) => {
       id,
     },
     include: {
+      Header: true,
       SubCatagory: true,
       CatagoryBlogs: true,
       CatagoryFaq: true,

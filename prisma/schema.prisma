@@ -10,15 +10,6 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Header {
-  id         Int      @id @default(autoincrement())
-  title      String
-  descripton String
-  picture    String?
-  createdAt  DateTime @default(now())
-  updatedAt  DateTime @updatedAt
-}
-
 model Catagory {
   id            Int             @id @default(autoincrement())
   name          String
@@ -26,9 +17,22 @@ model Catagory {
   picture       String?
   createdAt     DateTime        @default(now())
   updatedAt     DateTime        @updatedAt
+  Header        Header[]
   SubCatagory   SubCatagory[]
   CatagoryBlogs CatagoryBlogs[]
   CatagoryFaq   CatagoryFaq[]
+}
+
+model Header {
+  id         Int       @id @default(autoincrement())
+  title      String
+  descripton String
+  picture    String?
+  catagoryId Int?
+  Catagory   Catagory? @relation(fields: [catagoryId], references: [id])
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 model SubCatagory {
@@ -59,6 +63,15 @@ model CatagoryFaq {
   Answer     String
   catagoryId Int
   catagory   Catagory @relation(fields: [catagoryId], references: [id])
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+model Blogs {
+  id         Int      @id @default(autoincrement())
+  title      String
+  descripton String
+  picture    String?
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
 }
