@@ -75,3 +75,43 @@ model Blogs {
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
 }
+
+model Contact {
+  id        Int      @id @default(autoincrement())
+  location  String
+  phone     Int
+  hours     String
+  email     String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Web {
+  id        Int      @id @default(autoincrement())
+  titel     String
+  image     String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Grow {
+  id        Int      @id @default(autoincrement())
+  titel     String
+  image     String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model video {
+  id        Int      @id @default(autoincrement())
+  video     String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Video {
+  id        Int      @id @default(autoincrement())
+  video     String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

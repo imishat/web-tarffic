@@ -6,6 +6,10 @@ import { SubCategoryRouters } from "./modules/header/subcategory/sobcategory.rou
 import { CategoryBlogsRouters } from "./modules/header/catagory_blogs/category_blogs";
 import { CategoryFAQRouters } from "./modules/category-Faq/category_faq.routes";
 import { BlogsRouters } from "./modules/blogs/blogs.routes";
+import { WebRouters } from "./modules/web/web.routes";
+import { GrowRouters } from "./modules/grow/grow.routes";
+import { ContactRouters } from "./modules/contact/contact.routes";
+import { VideoRouters } from "./modules/video/video.routes";
 
 const app: Application = express();
 app.use(express.json());
@@ -16,4 +20,8 @@ app.use("/api/v1", SubCategoryRouters);
 app.use("/api/v1", CategoryBlogsRouters);
 app.use("/api/v1", CategoryFAQRouters);
 app.use("/api/v1", BlogsRouters);
+app.use("/api/v1", WebRouters);
+app.use("/api/v1", GrowRouters);
+app.use("/api/v1", ContactRouters);
+app.use("/api/v1", VideoRouters);
 export default app;
